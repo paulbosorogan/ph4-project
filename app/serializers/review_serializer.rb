@@ -1,5 +1,5 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :comment 
+  attributes :comment, :username 
 
   has_one :movie 
   has_one :user
