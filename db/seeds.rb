@@ -5,7 +5,8 @@ puts 'Seeding data 📝'
 
 array = [ 
     
-    {
+    {   
+        id: 1,
         title: "The Godfather",
         year: 1972,
         runtime: 175,
@@ -17,6 +18,7 @@ array = [
         genre: "Crime, Drama"
     },
     {
+        id: 2,
         title: "The Dark Knight",
         year: 2008,
         runtime: 152,
@@ -28,6 +30,7 @@ array = [
         genre: "Action, Crime, Drama"
     },
     {
+        id: 3,
         title: "Schindler's List",
         year: 1993,
         runtime: 195,
@@ -39,6 +42,7 @@ array = [
         genre: "Biography, Drama, History"
     },
     {
+        id: 4,
         title: "Pulp Fiction",
         year: 1994,
         runtime: 154,
@@ -50,6 +54,7 @@ array = [
         genre: "Crime, Drama"
     },
     {
+        id: 5,
         title: "Forrest Gump",
         year: 1994,
         runtime: 142,
@@ -61,6 +66,7 @@ array = [
         genre: "Drama, Romance"
     },
     {
+        id: 6,
         title: "The Matrix",
         year: 1999,
         runtime: 136,
@@ -72,6 +78,7 @@ array = [
         genre: "Action, Sci-Fi"
     },
     {
+        id: 7,
         title: "Spider-Man: Across the Spider-Verse",
         year: 2023,
         runtime: 140,
@@ -82,7 +89,8 @@ array = [
         trailer: "https://www.imdb.com/video/vi829277209/?ref_=ext_shr_lnk",
         genre: "Animation, Action, Adventure"
     },
-    {
+    { 
+        id: 8,
         title: "It's a Wonderful Life",
         year: 1946,
         runtime: 130,
@@ -94,6 +102,7 @@ array = [
         genre: "Drama, Family, Fantasy"
     },
     {
+        id: 9,
         title: "Oppenheimer",
         year: 2023,
         runtime: 180,
@@ -105,6 +114,7 @@ array = [
         genre: "Biography, Drama, History"
     },
     {
+        id: 10,
         title: "WALL·E",
         year: 2008,
         runtime: 98,
@@ -116,6 +126,7 @@ array = [
         genre: "Animation, Adventure, Family"
     },
     {
+        id: 11,
         title: "Hachi: A Dog's Tale",
         year: 2009,
         runtime: 93,
@@ -127,6 +138,7 @@ array = [
         genre: "Biography, Drama, Family"
     },
     {
+        id: 12,
         title: "No Hard Feelings",
         year: 2023,
         runtime: 163,
@@ -138,6 +150,7 @@ array = [
         genre: "Comedy, Romance"
     },
     {
+        id: 13,
         title: "Mrs. Doubtfire",
         year: 1993,
         runtime: 125,
@@ -149,6 +162,7 @@ array = [
         genre: "Comedy, Drama"
     },
     {
+        id: 14,
         title: "Everything Everywhere All at Once",
         year: 2022,
         runtime: 139,
@@ -160,6 +174,7 @@ array = [
         genre: "Action, Adventure, Comedy"
     },
     {
+        id: 15,
         title: "Rush Hour",
         year: 1998,
         runtime: 98,
@@ -171,6 +186,7 @@ array = [
         genre: "Action, Comedy, Crime"
     },
     {
+        id: 16,
         title: "It",
         year: 1990,
         runtime: 192,
@@ -182,6 +198,7 @@ array = [
         genre: "Drama, Horror, Mystery"
     },
     {
+        id: 17,
         title: "The Wolf of Wall Street",
         year: 2013,
         runtime: 180,
@@ -193,6 +210,7 @@ array = [
         genre: "Biography, Comedy, Crime"
     },
     {
+        id: 18,
         title: "Gladiator",
         year: 2000,
         runtime: 155,
@@ -204,6 +222,7 @@ array = [
         genre: "Action, Adventure, Drama"
     },
     {
+        id: 19,
         title: "Mean Girls",
         year: 2004,
         runtime: 97,
@@ -215,6 +234,7 @@ array = [
         genre: "Comedy"
     },
     {
+        id: 20,
         title: "Bridesmaids",
         year: 2011,
         runtime: 125,
