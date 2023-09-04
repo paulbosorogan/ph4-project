@@ -1,13 +1,183 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*Navigation*/
+
+.logout {
+  margin-left: 1rem;
+  float: right;
+}
+.nav-greeting {
+  margin-left: 70rem;
+  float: right;
+}
+.login {
+  text-align: center;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  
+}
+
+.homepage {
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('https://i.imgur.com/iPb7PIp.jpg');
+  background-size: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(18px + 2vmin);
+  color: white;
+  text-shadow: 2px 2px 8px black;
+  padding-bottom: 10rem;
+}
+.heading {
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+  float: left;
+}
+.heading::after{
+  content: "+";
+  color: slateblue
+}
+ 
+.homepage-head {
+  float: left;
+}
+
+.greeting {
+  font-size: 4rem;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.greeting-text {
+  font-size: 1.3rem;
+  margin-bottom: 1%;
+}
+
+/*Sign Up*/
+
+.sign-up-container {
+  text-align: center;
+  display: flex;
+  min-height: 45vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #303332;
+  opacity: 0.9;
+  font-size: 1.3rem;
+}
+.sign-up-form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+.log-in-container {
+  text-align: center;
+  display: flex;
+  min-height: 30vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #303332;
+  opacity: 0.9;
+  font-size: 1.3rem;
+}
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 15px;
+}
+p.form {
+  font-size: 1.3rem;
+}
+.login-bttn {
+  font-size: 1.3rem;
+  background-color: rgb(73, 140, 101);
+  color: white;
+  border: none;
+  padding: 3px;
+  padding-left: 2px;
+}
+
+input {
+  margin: 0.2rem 0;
+  padding: 0.1rem;
+  border: none;
+}
+
+.movie-card {
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.movie-page {
+  margin-left: 5rem;
+  margin-top: 5rem;
+  display: flex;
+}
+.card {
+  width: 45%;
+  margin-right: 30px;
+}
+.review-container {
+  display: flex;
+  border-radius: 5px;
+  float: right;
+  width: 45%;
+  background-color: white;
+}
+
+.review-page {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  color: black;
+  height: 50vh;
+}
+.review-input {
+  background-color: whitesmoke;
+}
+
+.review-card {
+  background-color: rgb(240, 239, 239);
+  padding-left: 1rem;
+  margin-bottom: 1px;
+}
+.trash-bttn-detail {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  background-color: #ffffff;
+}
+
+.edit-bttn {
+  margin-left: 11rem;
+  margin-bottom: 5%;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  border: none;
+  background-color: #ffffff;
 }
