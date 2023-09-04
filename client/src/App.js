@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect, useContext} from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import Navigation from './components/Navigation';
+import { UserContext } from './contexts/UserContext';
+import { Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import Login from './components/Login';
+import MovieList from './components/MovieList';
+import MovieDetails from './components/MovieDetails';
+import ReviewContainer from './components/ReviewContainer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    
+    const {user} = useContext(UserContext)
+    const [movies, setMovies] = useState([])
 
-export default App;
+    useEffect(()=>{
+        fetch('/movies')
+        .then((r)=> r.json())
+        .then(data =>setMovies(data))
+      },[])
+    
+  
+    if(!user) return <Login/>
+
+    return (
+      <div className='movie-container'>
+        <div>
+          <Navigation/>
+        </div>
+          <Routes>
+            <Route exact path='/' element={<Home movies={movies}/>} />
+            <Route exact path='/movies' element={<MovieList movies={movies}/>} />
+            <Route exact path='/movies/:id' element={<MovieDetails movies={movies} setMovies={setMovies}/>} />
+            <Route exact path='/movies/:id/reviews' element={<ReviewContainer />} />
+          
+          </Routes>
+        </div>
+    );
+  };
+  
+  export default App;
