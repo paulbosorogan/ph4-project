@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "react-hot-loader": "^4.5.3"
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.1"
-  }
-}
