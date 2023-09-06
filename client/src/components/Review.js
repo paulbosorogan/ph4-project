@@ -11,19 +11,23 @@ function Review({review, movie, onDeleteReview, onUpdateReview}) {
 
   function activateEdit(){
     setIsEdit((isEdit)=> !isEdit)
-    console.log('Yes edit button')
   }
 
-  function handleDeleteReview(e){
-    e.preventDefault()
-
+  function handleDeleteReview(){
     fetch(`/reviews/${review.id}`,{
-      method: "DELETE"
+      method: "DELETE",
     })
     .then(deletedReview => onDeleteReview(deletedReview))
   }
-
-  if (user == username) return <EditReview/>
+  
+  if(user.username !== review.username){
+    return (
+      <div className='review-card'>
+        <p><b>{review.username}</b> says:</p>
+        <p>{review.comment}</p>
+      </div>
+    )
+  }
 
   return (
     <div className='review-card'>
@@ -39,7 +43,7 @@ function Review({review, movie, onDeleteReview, onUpdateReview}) {
             onUpdateReview={onUpdateReview}/>) : (
             <div className="btn-group">
             <button className='edit-bttn' onClick={activateEdit} role='img'>✏️</button>
-            <button className="trash-bttn-detail" onClick={handleDeleteReview} role='img'>🗑</button>
+            <button className="trash-bttn-detail" onClick={()=>handleDeleteReview(review)} role='img'>🗑</button>
             </div>
           )
         }
