@@ -7,7 +7,8 @@ import { UserContext } from '../contexts/UserContext'
 
 function Navigation() {
   const {user, setUser} = useContext(UserContext)
-
+  const avatar = <img className='avatar' src='https://i.imgur.com/7fJB94l.jpg'/>
+   
   function handleLogout(){
     fetch('/logout', {
       method: "DELETE" 
@@ -26,7 +27,8 @@ function Navigation() {
          <Nav>
             <NavLink eventkey='1' as={Link} to='/'>Home</NavLink>
             <NavLink eventkey='2' as={Link} to='/movies'>Movies</NavLink>
-            <p className='nav-greeting'>Welcome, {user.username}!😊</p>
+            <NavLink eventkey='3' as={Link} to='/user-profile'>User Profile</NavLink>
+            <p className='nav-greeting'>Welcome, {user.username} {avatar}</p>
             <NavLink eventkey='3' onClick={handleLogout} className='logout'>Log Out</NavLink>   
          </Nav>
         </Navbar.Collapse>
