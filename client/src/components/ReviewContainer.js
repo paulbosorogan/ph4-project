@@ -13,7 +13,6 @@ function ReviewContainer({movie, addReview, onDeleteReview, onUpdateReview}) {
           {movie.reviews.map((review) => (
             <Review key={review.id} movie={movie} review={review} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview}/>
           ))}
-          
         </div>
      
         <h2>Post a review</h2>
