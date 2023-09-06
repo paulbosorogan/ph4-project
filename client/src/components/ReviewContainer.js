@@ -5,7 +5,6 @@ import Review from './Review'
 
 function ReviewContainer({movie, addReview, onDeleteReview, onUpdateReview}) {
 
-
   return (
     <div className='review-page'>
       <div>
@@ -14,10 +13,11 @@ function ReviewContainer({movie, addReview, onDeleteReview, onUpdateReview}) {
           {movie.reviews.map((review) => (
             <Review key={review.id} movie={movie} review={review} onDeleteReview={onDeleteReview} onUpdateReview={onUpdateReview}/>
           ))}
+          
         </div>
-
+     
         <h2>Post a review</h2>
-        <ReviewForm movie={movie} addReview={addReview}/>
+        <ReviewForm movie={movie} addReview={addReview} />
     </div>
   )
 }
