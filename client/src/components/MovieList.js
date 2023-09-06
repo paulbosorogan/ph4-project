@@ -14,7 +14,7 @@ import MoviePoster from './MoviePoster'
      <div className='row'>
 
     {movies.map((movie)=> (
-            <MoviePoster movie={movie} key={movie.tile}/>
+            <MoviePoster key={movie.id} movie={movie} />
         ))}
 
      </div>
