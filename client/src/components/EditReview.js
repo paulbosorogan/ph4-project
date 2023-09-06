@@ -11,7 +11,7 @@ function EditReview({id, serverComment, activateEdit, movie, onUpdateReview}) {
     
   function handleEditReview(e){
     e.preventDefault()
-    console.log('Edit button')
+
     fetch(`/reviews/${id}`,{
       method: "PATCH",
       headers: {
