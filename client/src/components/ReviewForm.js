@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import Button from '../styles/Button'
-import FormField from '../styles/FormField'
 import Error from '../styles/Error'
 
 
@@ -29,6 +28,7 @@ import Error from '../styles/Error'
             }
           });
           setReview('')
+          setErrors([])
         }
     
   return (
@@ -46,14 +46,14 @@ import Error from '../styles/Error'
             />
            
             <Button type='submit'>
-                {isLoading ? "Loading.." : "Submit review"}
+                {isLoading ? "Loading.." : "Submit"}
             </Button>
 
-            <FormField>
-                {errors.map((err)=> (
+            <div>
+                {errors?.map((err)=> (
                     <Error key={err}>{err}</Error>
                 ))}
-            </FormField>
+            </div>
         </form>
     </div>
   )
