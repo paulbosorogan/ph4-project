@@ -19,7 +19,7 @@ code {
   float: right;
 }
 .nav-greeting {
-  margin-left: 70rem;
+  margin-left: 90rem;
   float: right;
 }
 .login {
@@ -54,7 +54,11 @@ code {
   content: "+";
   color: slateblue
 }
- 
+.user::before{
+  content: "Hello, ";
+  color: slateblue
+} 
+
 .homepage-head {
   float: left;
 }
@@ -140,7 +144,7 @@ input {
   display: flex;
   border-radius: 5px;
   float: right;
-  width: 45%;
+  width: 50%;
   background-color: white;
 }
 
@@ -159,13 +163,15 @@ input {
   background-color: rgb(240, 239, 239);
   padding-left: 1rem;
   margin-bottom: 1px;
+  padding-top: 1rem;
+  width: 20rem;
 }
 .trash-bttn-detail {
   margin-left: 5%;
   margin-bottom: 5%;
   border-radius: 5px;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 4px 8px;
   text-align: center;
   border: none;
   background-color: #ffffff;
@@ -176,8 +182,34 @@ input {
   margin-bottom: 5%;
   border-radius: 5px;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 4px 8px;
   text-align: center;
   border: none;
   background-color: #ffffff;
+}
+
+.user-profile{
+  margin-top: 5rem;
+  margin-left: 5%;
+  
+}
+.user-box {
+  text-align: center;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.avatar {
+  height: 33px;
+  width: 33px;
+}
+.user-movies{
+  float: left;
+  margin-right: 10%;
+}
+.num{
+  font-size: 1.5rem;
+  color: slateblue;
 }
