@@ -1,30 +1,45 @@
-import React from 'react'
+import React, {useContext}  from 'react'
 import { useParams } from 'react-router-dom'
 import ReviewContainer from './ReviewContainer';
+import { UserContext } from '../contexts/UserContext';
 
 
 function MovieDetails({movies, setMovies}) {
-
+    const {user, setUser} = useContext(UserContext)
+    
     const {id} = useParams();
-
     const currentMovie = movies.find(movie => movie.id == id)
 
     function addReview(review){
         const newReviews = [...currentMovie.reviews, review]
         currentMovie.reviews = newReviews 
+        
+        const userCopy = {...user,
+           movies: [...user.movies, currentMovie], 
+           reviews: [...user.reviews, newReviews]
+          }
+        setUser(userCopy)
+        
         const filteredMovies = movies.filter( movie => movie.id !== review.movie_id)
-        const newMovies = [...filteredMovies, currentMovie]
+        const newMovies = [...filteredMovies]
         setMovies(newMovies)
+
     }
     
 
     function onUpdateReview(updatedReview){
       const reviewUpdate = movies.map((movie)=>{
         if(movie.id === updatedReview.movie_id){
-          const refilterReviews = movie.reviews.filter((rev)=> rev.id !== updatedReview.id)
+          const updatedReviews = movie.reviews.map((rev)=> {
+            if(rev.id == updatedReview.id){
+              return updatedReview
+            } else  {
+              return rev
+            }
+          })
           return {
             ...movie,
-            reviews: [...refilterReviews, updatedReview]
+            reviews: updatedReviews
           }
         } else {
           return movie
@@ -33,8 +48,26 @@ function MovieDetails({movies, setMovies}) {
       setMovies(reviewUpdate)
     }
     
-    function onDeleteReview(){
-      console.log('Deleted')
+    function onDeleteReview(deletedRev){
+      const afterDeleteRev = movies.map((movie)=>{
+        if(movie.id === deletedRev.movie_id){
+          const filterDeleteRev = movie.reviews.filter((rev)=> rev.id !== deletedRev.id)
+          return {
+            ...movie,
+            reviews: filterDeleteRev
+          }
+        } else {
+          return movie
+        }
+      })
+      setMovies(afterDeleteRev)
+      //update user state so the movie will be deleted from the user profile list
+      //step1: remove the movie from the user movie list
+      //step2: make copy of the user with new movie list
+      //step3: update state
+      const userDeletedMovie = user.movies.filter((movie) => movie.id !== deletedRev.movie_id)
+      const copyUser2 = {...user, movies: userDeletedMovie}
+      setUser(copyUser2)
     }
     
     if (!currentMovie) {
