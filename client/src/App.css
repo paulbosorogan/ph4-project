@@ -42,12 +42,13 @@ body {
 	text-align: center;
 }
 img {
-  width: 250px;
-  height: 350px
+  width: 200px;
+  height: 300px
 }
 a {
-	margin-left: 15px;
+	margin-left: 10px;
 	color: white;
+	font-size: 0.9rem;
 }
 a:active {
 	background-color: slateblue
