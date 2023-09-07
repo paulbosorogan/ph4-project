@@ -4,7 +4,7 @@ import MoviePoster from './MoviePoster'
 
 function UserProfile({user}) {
 
-    const num = user.movies.length
+    const num = user.reviews.length
     
   return (
 
