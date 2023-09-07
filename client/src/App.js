@@ -34,7 +34,7 @@ function App() {
             <Route exact path='/' element={<Home movies={movies}/>} />
             <Route exact path='/movies' element={<MovieList movies={movies}/>} />
             <Route exact path='/movies/:id' element={<MovieDetails movies={movies} setMovies={setMovies}/>} />
-            <Route exact path='/movies/:id/reviews' element={<ReviewContainer />} />
+            <Route exact path='/movies/:id/reviews' element={<ReviewContainer/>} />
             <Route exact path='/user-profile' element={<UserProfile user={user}/>} />
           </Routes>
         </div>
