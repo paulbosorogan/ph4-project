@@ -14,9 +14,10 @@ function Review({review, movie, onDeleteReview, onUpdateReview}) {
   }
 
   function handleDeleteReview(){
-    fetch(`/reviews/${review.id}`,{
+    fetch(`/reviews/${id}`,{
       method: "DELETE",
     })
+    .then(r => r.json())
     .then(deletedReview => onDeleteReview(deletedReview))
   }
   
