@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2023_08_20_164901) do
     t.string "director"
     t.string "starring"
     t.string "short"
+    t.string "trailer"
     t.string "image_url"
     t.string "genre"
     t.datetime "created_at", precision: 6, null: false
