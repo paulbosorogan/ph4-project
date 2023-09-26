@@ -7,7 +7,7 @@ import { UserContext } from '../contexts/UserContext'
 
 function Navigation() {
   const {user, setUser} = useContext(UserContext)
-  const avatar = <img className='avatar' src='https://i.imgur.com/7fJB94l.jpg'/>
+  const avatar = <img className='avatar' alt='avatar template' src='https://i.imgur.com/7fJB94l.jpg'/>
    
   function handleLogout(){
     fetch('/logout', {
