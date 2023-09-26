@@ -5,6 +5,10 @@ import MoviePoster from './MoviePoster'
 
  function MovieList({movies}){
   
+//conditional rendering 
+//if user commented on 1 movie, that movie won't show up in the movies list 
+// if user.username !== movie.review.username, render movie 
+
 
   return (
     <>
@@ -13,9 +17,9 @@ import MoviePoster from './MoviePoster'
     </div>
      <div className='row'>
 
-    {movies.map((movie)=> (
-            <MoviePoster key={movie.id} movie={movie} />
-        ))}
+    {movies?.map(movie =>(
+      <MoviePoster key={movie.id} movie={movie} />
+    ))}
 
      </div>
      </>
