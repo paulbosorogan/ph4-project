@@ -21,7 +21,7 @@ function App() {
         .then((r)=> r.json())
         .then(data =>setMovies(data))
       },[])
-    
+
   
     if(!user) return <Login/>
 
@@ -31,8 +31,8 @@ function App() {
           <Navigation/>
         </div>
           <Routes>
-            <Route exact path='/' element={<Home movies={movies}/>} />
-            <Route exact path='/movies' element={<MovieList movies={movies}/>} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/movies' element={<MovieList movies={movies} user={user}/>} />
             <Route exact path='/movies/:id' element={<MovieDetails movies={movies} setMovies={setMovies}/>} />
             <Route exact path='/movies/:id/reviews' element={<ReviewContainer/>} />
             <Route exact path='/user-profile' element={<UserProfile user={user}/>} />
