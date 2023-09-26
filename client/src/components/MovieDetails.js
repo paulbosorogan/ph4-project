@@ -2,6 +2,7 @@ import React, {useContext}  from 'react'
 import { useParams } from 'react-router-dom'
 import ReviewContainer from './ReviewContainer';
 import { UserContext } from '../contexts/UserContext';
+import Trailer from './Trailer';
 
 
 function MovieDetails({movies, setMovies}) {
@@ -10,18 +11,19 @@ function MovieDetails({movies, setMovies}) {
     const {id} = useParams();
     const currentMovie = movies.find(movie => movie.id == id)
 
+
+
     function addReview(review){
         const newReviews = [...currentMovie.reviews, review]
         currentMovie.reviews = newReviews 
         
-        const userCopy = {...user,
-           movies: [...user.movies, currentMovie], 
-           reviews: [...user.reviews, newReviews]
-          }
+        const userCopy = {...user, 
+        movies: [...user.movies, currentMovie], 
+        reviews: [...user.reviews, review]}
         setUser(userCopy)
         
         const filteredMovies = movies.filter( movie => movie.id !== review.movie_id)
-        const newMovies = [...filteredMovies]
+        const newMovies = [...filteredMovies, currentMovie]
         setMovies(newMovies)
 
     }
@@ -66,7 +68,9 @@ function MovieDetails({movies, setMovies}) {
       //step2: make copy of the user with new movie list
       //step3: update state
       const userDeletedMovie = user.movies.filter((movie) => movie.id !== deletedRev.movie_id)
-      const copyUser2 = {...user, movies: userDeletedMovie}
+      const userDeleteReview = user.reviews.filter ( rev => rev.id !== deletedRev.id)
+    
+      const copyUser2 = {...user, movies: userDeletedMovie, reviews: userDeleteReview}
       setUser(copyUser2)
     }
     
@@ -95,6 +99,9 @@ function MovieDetails({movies, setMovies}) {
                 </div>
              
          </div>
+        </div>
+        <div className='trailer-container'>
+            <Trailer trailer={currentMovie.trailer}/>
         </div>
         <div className='review-container'>
             <ReviewContainer movie={currentMovie} addReview={addReview} 
