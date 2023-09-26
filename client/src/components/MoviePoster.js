@@ -2,7 +2,9 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 
- function MoviePoster({movie: {id, image_url}}) {
+ function MoviePoster({movie}) {
+
+  const {id, image_url} = movie
 
   return (
     <>
