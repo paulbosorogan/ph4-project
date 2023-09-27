@@ -9,6 +9,7 @@ import MoviePoster from './MoviePoster'
 //if user commented on 1 movie, that movie won't show up in the movies list 
 // if user.username !== movie.review.username, render movie 
 
+if(!movies) return <div>Loading...</div>
 
   return (
     <>
