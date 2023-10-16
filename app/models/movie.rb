@@ -1,4 +1,7 @@
 class Movie < ApplicationRecord
+
+    validates :title, :year, :runtime, :director, :starring, :short, :trailer, :image_url, :genre, presence: :true
+
     has_many :reviews, dependent: :destroy 
     has_many :users, through: :reviews
     
@@ -14,5 +17,7 @@ class Movie < ApplicationRecord
 
 end
 
-# Make a custom method that takes an argument of an integer which is a year. Find all the movies that were made after this year and return them as an array of movie objects.
+# Make a custom method that takes an argument of an integer which is a year. 
+#Find all the movies that were made after this year and return them as an 
+#array of movie objects.
 
