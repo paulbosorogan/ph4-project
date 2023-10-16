@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
     wrap_parameters format: []
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     
     def index 
         if session[:user_id]
@@ -44,9 +43,5 @@ class ReviewsController < ApplicationController
     def render_not_found(exception)
         render json: { errors: "#{exception.model} not found"}, status: :not_found
     end
-
-    def render_unprocessable_entity(invalid)
-        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
-    end 
     
 end
