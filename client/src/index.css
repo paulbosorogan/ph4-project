@@ -102,10 +102,28 @@ code {
   opacity: 0.9;
   font-size: 1.3rem;
 }
+.movie-form-container {
+  text-align: center;
+  display: flex;
+  min-height: 35vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #303332;
+  opacity: 0.9;
+  font-size: 1rem;
+  margin-top: 4.5rem;
+}
 .log-in-form {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10%;
+  margin: 15px;
+}
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
   margin: 15px;
 }
 p.form {
