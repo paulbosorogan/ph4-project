@@ -10,6 +10,7 @@ import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
 import ReviewContainer from './components/ReviewContainer';
 import UserProfile from './components/UserProfile';
+import MovieForm from './components/MovieForm';
 
 function App() {
     
@@ -22,7 +23,8 @@ function App() {
         .then(data =>setMovies(data))
       },[])
 
-  
+      console.log(movies)
+    
     if(!user) return <Login/>
 
     return (
@@ -35,6 +37,7 @@ function App() {
             <Route exact path='/movies' element={<MovieList movies={movies} user={user}/>} />
             <Route exact path='/movies/:id' element={<MovieDetails movies={movies} setMovies={setMovies}/>} />
             <Route exact path='/movies/:id/reviews' element={<ReviewContainer/>} />
+            <Route exact path='/movies/new' element={<MovieForm setMovies={setMovies} />} />
             <Route exact path='/user-profile' element={<UserProfile user={user}/>} />
           </Routes>
         </div>
