@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :movies, only: [:index, :show]
-  resources :reviews 
-  resources :users, only: [:index, :show, :create]
+  resources :movies, only: [:index, :create]
+  resources :reviews, only: [:index, :create, :update, :destroy]
   get '/me', to: 'users#show'
   post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
